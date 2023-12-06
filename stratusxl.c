@@ -87,4 +87,4 @@ MODULE_AUTHOR("Lukas Praster");
 MODULE_INFO(key_mappings,"KEY_HOMEPAGE mapped to BTN_MODE\n\t\tKEY_BACK mapped to BTN_SELECT");
 MODULE_DESCRIPTION("steelseries Stratus XL\n\t\tbluetooth gamepad driver");
 MODULE_LICENSE("GPL");
-MODULE_VERSION("1.0");
+MODULE_VERSION("0.1");
