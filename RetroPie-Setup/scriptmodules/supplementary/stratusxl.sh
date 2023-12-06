@@ -49,7 +49,7 @@ function configure_stratusxl() {
     [[ "$md_mode" == "remove" ]] && return
 
     if [[ ! -f /etc/modprobe.d/stratusxl.conf ]]; then
-        echo "options stratusxl map_keys_to_buttons=1" >/etc/modprobe.d/stratus.conf
+        echo "options stratusxl map_keys_to_buttons=1" >/etc/modprobe.d/stratusxl.conf
     fi
     dkmsManager reload stratusxl "$(_version_stratusxl)"
 }
