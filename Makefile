@@ -3,21 +3,23 @@ obj-m += stratusxl.o
 #ccflags-y += ${MY_CFLAGS}
 #CC += ${MY_CFLAGS}
 
+KVERSION = $(shell uname -r)
 
 all:
-	make -C /lib/modules/$(shell uname -r)/build V=1 M=$(PWD) modules
+	make -C /lib/modules/$(KVERSION)/build V=1 M=$(PWD) modules
 
 #debug:
-#	make -C /lib/modules/$(shell uname -r)/build V=1 M=$(PWD) modules EXTRA_CFLAGS="$(MY_CFLAGS)"
+#	make -C /lib/modules/$(KVERSION)/build V=1 M=$(PWD) modules EXTRA_CFLAGS="$(MY_CFLAGS)"
 
 install:
-	make -C /lib/modules/$(shell uname -r)/build V=1 M=$(shell pwd) modules_install
+	make -C /lib/modules/$(KVERSION)/build V=1 M=$(shell pwd) modules_install
 	depmod -A
 	modprobe stratusxl
 	echo "stratusxl" > /etc/modules-load.d/stratusxl.conf
 
 clean:
-	make -C /lib/modules/$(shell uname -r)/build V=1 M=$(PWD) clean
+#	make -C /lib/modules/$(KVERSION)/build V=1 M=$(PWD) clean
+	test ! -d /lib/modules/$(KVERSION) || make -C /lib/modules/$(KVERSION)/build V=1 M=$(PWD) clean
 
 load:
 	sudo insmod stratusxl.ko
