@@ -9,11 +9,11 @@
 # at https://raw.githubusercontent.com/RetroPie/RetroPie-Setup/master/LICENSE.md
 #
 
-rp_module_id="stratuxl"
+rp_module_id="stratusxl"
 rp_module_desc="Updated steelseries Stratus XL bluetooth Linux Kernel driver"
 rp_module_help="This is the latest stratusxl driver from https://github.com/luksi1234/hid-stratusxl\n\n\n\nThis fixes mapping the the button KEY_HOEMPAGE and KEY_BACK in Emulation Station.\n\nIf you want the previous trigger behaviour please remoce this driver"
 rp_module_licence="GPL2 https://www.kernel.org/pub/linux/kernel/COPYING"
-rp_module_repo="git https://github.com/luksi1234/hid-stratusxl.git master"
+rp_module_repo="git https://github.com/luksi1234/hid-stratusxl.git main"
 rp_module_section="driver"
 rp_module_flags="noinstclean !mali"
 
@@ -42,15 +42,15 @@ function build_stratusxl() {
 
 function remove_stratusxl() {
     dkmsManager remove stratusxl "$(_version_stratusxl)"
-    rm -f /etc/modprobe.d/stratsuxl.conf
+    rm -f /etc/modprobe.d/stratusxl.conf
 }
 
 function configure_stratusxl() {
     [[ "$md_mode" == "remove" ]] && return
 
     if [[ ! -f /etc/modprobe.d/stratusxl.conf ]]; then
-        echo "options stratusxl map_keys_to_buttons=1" >/etc/modprobe.d/startusxl.conf
+        echo "options stratusxl map_keys_to_buttons=1" >/etc/modprobe.d/stratus.conf
     fi
-    dkmsManager reload stratsuxl "$(_version_stratusxl)"
+    dkmsManager reload stratusxl "$(_version_stratusxl)"
 }
 
