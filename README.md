@@ -4,7 +4,15 @@ Linux HID bluetooth driver for steelseries Stratus XL
 This driver is useful if you want to use steelseries Stratus XL gamepad within retropie.
 
 In standard, linux hid-generic driver will be used.
-If hoid-generic driver is used two buttons will not be available in retropie.
+If hid-generic driver is used two buttons will not be available in retropie.
 
+# Installation
 
+The follwing command will download an installation odule for RetroPie Setup.
+After installation you can install/deinstall the driver for SteelSerie StratusXL in the Restopie Setup.
+
+Exceute as root:
+wget install.sh | bash
+
+Have fun.
 
