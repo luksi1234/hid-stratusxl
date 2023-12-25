@@ -13,7 +13,7 @@ After installation you can install/deinstall the driver for SteelSerie StratusXL
 
 Exceute as root:
 ```
-wget install.sh | bash</code>
+wget https://github.com/luksi1234/hid-stratusxl/raw/main/install/repropie_install.sh | bash
 ```
 
 Have fun.
