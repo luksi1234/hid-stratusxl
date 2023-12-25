@@ -30,10 +30,6 @@ function sources_stratusxl() {
     rm -rf "$md_inst"
     gitPullOrClone "$md_inst"
     cd "$md_inst"
-    # LED support (as disabled currently in packaged RPI kernel) and allow forcing MAP_TRIGGERS_TO_BUTTONS
-    # applyPatch "$md_data/01_enable_leds_and_trigmapping.diff"
-    # Tell 'dkms' to use the 'updates' kernel module folder to store the module
-    # applyPatch "$md_data/02_dkms_updates_folder.diff"
 }
 
 function build_stratusxl() {
@@ -49,7 +45,8 @@ function configure_stratusxl() {
     [[ "$md_mode" == "remove" ]] && return
 
     if [[ ! -f /etc/modprobe.d/stratusxl.conf ]]; then
-        echo "options stratusxl map_keys_to_buttons=1" >/etc/modprobe.d/stratusxl.conf
+        #echo "options stratusxl map_keys_to_buttons=1" >/etc/modprobe.d/stratusxl.conf
+        echo "options stratusxl" >/etc/modprobe.d/stratusxl.conf  # no options
     fi
     dkmsManager reload stratusxl "$(_version_stratusxl)"
 }
