@@ -27,18 +27,22 @@ function depends_stratusxl() {
 }
 
 function sources_stratusxl() {
+    echo "md_inst: $md_inst"
+    echo "md_build: $md_build"
     rm -rf "$md_inst"
-    gitPullOrClone "$md_inst"
+    #gitPullOrClone "$md_inst"
+    gitPullOrClone
+    rsync -a --delete "$md_build/hid-stratusxl/" "$md_inst/"
     cd "$md_inst"
 }
 
 function build_stratusxl() {
-    dkmsManager install stratusxl "$(_version_stratusxl)"
+    dkmsManager install hid-stratusxl "$(_version_stratusxl)"
 }
 
 function remove_stratusxl() {
-    dkmsManager remove stratusxl "$(_version_stratusxl)"
-    rm -f /etc/modprobe.d/stratusxl.conf
+    dkmsManager remove hid-stratusxl "$(_version_stratusxl)"
+    rm -f /etc/modprobe.d/hid-stratusxl.conf
 }
 
 function configure_stratusxl() {
@@ -46,8 +50,8 @@ function configure_stratusxl() {
 
     if [[ ! -f /etc/modprobe.d/stratusxl.conf ]]; then
         #echo "options stratusxl map_keys_to_buttons=1" >/etc/modprobe.d/stratusxl.conf
-        echo "options stratusxl" >/etc/modprobe.d/stratusxl.conf  # no options
+        echo "options stratusxl" >/etc/modprobe.d/his-stratusxl.conf  # no options
     fi
-    dkmsManager reload stratusxl "$(_version_stratusxl)"
+    dkmsManager reload hid-stratusxl "$(_version_stratusxl)"
 }
 
