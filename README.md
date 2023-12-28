@@ -16,7 +16,8 @@ Exceute as root:
 wget -O - https://github.com/luksi1234/hid-stratusxl/raw/main/install/retropie_install.sh | bash
 ```
 
-Afterwards you shoud be able to instlla driver with retropie setup gui.
+Afterwards you should be able to install driver with retropie setup gui.
+
 Manage packages -> Manage driver packages -> stratusxl -> Install from source
 
 Have fun.
