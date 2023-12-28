@@ -48,10 +48,10 @@ function remove_stratusxl() {
 function configure_stratusxl() {
     [[ "$md_mode" == "remove" ]] && return
 
-    if [[ ! -f /etc/modprobe.d/hid-stratusxl.conf ]]; then
-        #echo "options stratusxl map_keys_to_buttons=1" >/etc/modprobe.d/stratusxl.conf
-        #echo "options hid-stratusxl" >/etc/modprobe.d/hid-stratusxl.conf  # no options
-    fi
+    #currently no special option for hid driver
+    #if [[ ! -f /etc/modprobe.d/hid-stratusxl.conf ]]; then
+    #    echo "options stratusxl map_keys_to_buttons=1" >/etc/modprobe.d/stratusxl.conf
+    #fi
     dkmsManager reload hid-stratusxl "$(_version_stratusxl)"
 }
 
