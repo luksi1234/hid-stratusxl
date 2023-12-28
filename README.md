@@ -9,7 +9,7 @@ If hid-generic driver is used two buttons will not be available in retropie.
 ### Installation
 
 The following command will download and install module for RetroPie Setup.
-After installation you can install/deinstall the driver for SteelSerie StratusXL in the Restopie Setup.
+After installation you can install/deinstall the driver for SteelSerie StratusXL in the Retropie Setup.
 
 Exceute as root:
 ```
