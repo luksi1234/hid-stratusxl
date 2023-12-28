@@ -234,8 +234,8 @@ static __u8 stratusxl_report_desc[] = {
 	0x75, 0x04,        //   Report Size (4)
 	0x95, 0x01,        //   Report Count (1)
 	0x91, 0x03,        //   Output (Const,Var,Abs,No Wrap,Linear,Preferred State,No Null Position,Non-volatile)
-	0xC0,              // End Collection
-	0x00              // Unknown (bTag: 0x00, bType: 0x00)
+	0xC0//,              // End Collection
+	//0x00              // Unknown (bTag: 0x00, bType: 0x00)
 
    
 };
