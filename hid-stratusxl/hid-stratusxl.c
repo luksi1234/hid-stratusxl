@@ -249,12 +249,12 @@ static int stratusxl_input_mapping(struct hid_device *hdev, struct hid_input *hi
 
 		switch (usage->hid & HID_USAGE) {
 			case 0x224:
-				hid_info(hdev,"Key.Back     >> BTN_SELECT");
+				hid_info(hdev,"Key.Back      >> BTN_SELECT");
 				hid_map_usage(hi,usage,bit,max,EV_KEY, BTN_SELECT);
 				set_bit(usage->type, hi->input->evbit);
 				break;
 			case 0x223:
-				hid_info(hdev, "Key.Back     >> BTN_SELECT");
+				hid_info(hdev, "Key.Homepage >> BTN_MODE");
 				hid_map_usage(hi,usage,bit,max,EV_KEY, BTN_MODE);
 				set_bit(usage->type, hi->input->evbit);
 				break;
