@@ -15,7 +15,7 @@ rp_module_help="This is the latest stratusxl driver from https://github.com/luks
 rp_module_licence="GPL2 https://www.kernel.org/pub/linux/kernel/COPYING"
 rp_module_repo="git https://github.com/luksi1234/hid-stratusxl.git main"
 rp_module_section="driver"
-rp_module_flags="noinstclean !mali"
+rp_module_flags="nobin"
 
 function _version_stratusxl() {
     echo "0.1"
